@@ -54,9 +54,7 @@ export default function LoginPage() {
                     <h1 className="text-2xl font-semibold text-gray-900"> Google Auth Application </h1>
                     <p className="mt-2 text-sm text-gray-500"> Sign in with your Google account to continue </p>
                 </div>
-                <div className="mt-8 flex justify-center">
-                    <LoginBtn onSuccess={handleLogin} />
-                </div>
+                
                 {logginIn && (
                     <p className="mt-4 text-center text-sm text-gray-500"> Authenticating with Google... </p>
                 )}
@@ -65,6 +63,10 @@ export default function LoginPage() {
                         {error}
                     </div>
                 )}
+
+                <div className="mt-8 flex justify-center">
+                    <LoginBtn onSuccess={handleLogin} />
+                </div>
             </div>
         </div>
     )
