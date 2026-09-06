@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
     cors({
-        origin: "https://localhost:5173",
+        origin: "http://localhost:5173",
         credentials: true,
     })
 );
@@ -93,8 +93,8 @@ app.post("/auth/google", async (req, res) => {
 
 app.get("/auth/saveduser", (req, res) => {
     if(!req.session.user){
-        return res.status(401).json({
-            message: "No user is logged in",
+        return res.status(200).json({
+            user: null,
         });
     }
 
